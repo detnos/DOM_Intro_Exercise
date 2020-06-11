@@ -1,10 +1,11 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   console.log("Javascript is alive!");
+  //Part One
   var greeting = document.getElementById('greeting');
   var allListItems = document.getElementsByTagName('li');
 
   var myImg = document.createElement('img');
-  myImg.src = "https://placekitten.com/96/139"; //as of 26 May 2020 cannot do it with gif for security reasons: https://www.chromestatus.com/feature/5629709824032768, changed picture
+  myImg.setAttribute('src', 'http://49.media.tumblr.com/tumblr_m6qt1rjPSz1rxjzkho1_500.gif');
   myImg.alt = "A Simplsons character waving in front of lockers."
   
   var array = ['make coffee', 'eat donut', 'change diapers', 'drive to work']
@@ -26,10 +27,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
   for (i = 0; i < array.length; i++) {
     let newLi = document.createElement('li');
     newLi.innerHTML = array[i];
-    console.log(newLi);
     unorderedTodo.appendChild(newLi);
+    newLi.addEventListener('click', (event) => {
+      
+      event.target.setAttribute('class', 'selected');
+
+    });
   }
-  console.log(unorderedTodo);
+
+  //Part Two
 
 
 });
